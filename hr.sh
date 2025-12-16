@@ -29,6 +29,10 @@ kp(){ # Kill process
 	fi
 }
 
+run(){
+	nohup $1 &>/dev/null
+}
+
 # 1.1. Dependencies.
 if ! exists zenity;then
 	echo -e "${RED}You have to install ${YELLOW}zenity${RED} package.${RESET}"
@@ -45,15 +49,15 @@ if exists hyprpaper;then
 fi
 
 if exists mpvpaper;then
-kp mpvpaper
-video=$(zenity --file-selection --title="Select mpvpaper video")
-mpvpaper -s -o "--loop --mute --no-osd-bar --no-input-default-bindings" ALL $video &
+	kp mpvpaper
+	video=$(zenity --file-selection --title="Select mpvpaper video")
+	run mpvpaper -s -o "--loop --mute --no-osd-bar --no-input-default-bindings" ALL $video
 fi
 
 # 1.3. Utilities.
 if exists waybar;then
 	kp waybar
-	waybar &
+	run waybar
 fi
 
 # 1.4. Hyprland itself.
