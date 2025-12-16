@@ -48,7 +48,7 @@ fi
 
 if exists mpvpaper;then
 	kp mpvpaper
-	video=$(zenity --file-selection --title="Select mpvpaper video"&>/dev/null)
+	video=$(zenity --file-selection --title="Select mpvpaper video"&>/dev/null)&>/dev/null
 	run mpvpaper -s -o "--loop --mute --no-osd-bar --no-input-default-bindings" ALL $video
 fi
 
