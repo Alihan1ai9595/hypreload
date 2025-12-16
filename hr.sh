@@ -28,7 +28,7 @@ kp(){ # Kill process
 }
 
 run(){
-	nohup $1&>/dev/null &
+	nohup $1 &
 }
 
 # 1.1. Dependencies.
