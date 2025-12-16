@@ -66,4 +66,4 @@ else
 	read;exit 0
 fi
 
-echo -e "\n\033[38;5;46mHyprland was completely reloaded.${RESET}"
+echo -e "\n\033[38;5;46mConfigurations were completely reloaded.${RESET}"
