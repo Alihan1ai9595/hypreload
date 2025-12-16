@@ -47,13 +47,13 @@ fi
 if exists mpvpaper;then
 kp mpvpaper
 video=$(zenity --file-selection --title="Select mpvpaper video")
-mpvpaper -s -o "--loop --mute --no-osd-bar --no-input-default-bindings" ALL $video
+mpvpaper -s -o "--loop --mute --no-osd-bar --no-input-default-bindings" ALL $video &
 fi
 
 # 1.3. Utilities.
 if exists waybar;then
 	kp waybar
-	waybar
+	waybar &
 fi
 
 # 1.4. Hyprland itself.
