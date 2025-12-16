@@ -26,6 +26,7 @@ kp(){ # Kill process
 	if pgrep $1; then
 		pkill $1
 		echo -e "${GREEN}Killed: $1${RESET}"
+	fi
 }
 
 # 1.1. Dependencies.
