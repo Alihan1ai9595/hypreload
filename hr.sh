@@ -25,7 +25,6 @@ exists(){
 kp(){ # Kill process
 	if pgrep $1; then
 		pkill $1
-		echo -e "${GREEN}Killed: $1${RESET}"
 	fi
 }
 
@@ -51,7 +50,7 @@ fi
 if exists mpvpaper;then
 	kp mpvpaper
 	video=$(zenity --file-selection --title="Select mpvpaper video")
-	run mpvpaper -s -o "--loop --mute --no-osd-bar --no-input-default-bindings" ALL $video
+	run mpvpaper -s -o "--loop --mute --no-osd-bar --no-input-default-bindings" ALL $video&>/dev/null
 fi
 
 # 1.3. Utilities.
