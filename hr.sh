@@ -22,7 +22,7 @@ exists(){
 }
 
 kp(){ # Kill process
-	if pgrep $1&>/dev/null; then
+	if pgrep $1; then
 		pkill $1&>/dev/null
 	fi
 }
