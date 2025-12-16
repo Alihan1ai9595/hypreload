@@ -13,10 +13,9 @@ echo -e "\033]0;HR v1 - al1h3n\007"
 GREEN="\e[32m"
 YELLOW="\e[33m"
 RED="\e[31m"
-BLUE="\e[34m"
 RESET="\e[0m"
 
-echo -e "\033[38;5;213mHyprReload by\033[0m \033[38;5;171mal1h3n${RESET}${RESET}"
+echo -e "\e[38;2;51;204;254mHypr\e[38;2;0;255;153mReload \e[38;2;11;206;217mby\033[0m \033[38;5;171mal1h3n${RESET}"
 
 exists(){
 	command -v $1&>/dev/null
@@ -49,7 +48,7 @@ fi
 
 if exists mpvpaper;then
 	kp mpvpaper
-	video=$(zenity --file-selection --title="Select mpvpaper video")&>/dev/null
+	video=$(zenity --file-selection --title="Select mpvpaper video")
 	run mpvpaper -s -o "--loop --mute --no-osd-bar --no-input-default-bindings" ALL $video
 fi
 
