@@ -28,7 +28,7 @@ kp(){ # Kill process
 }
 
 run(){
-	nohup $1 &
+	nohup $1&>/dev/null &
 }
 
 # 1.1. Dependencies.
@@ -60,7 +60,7 @@ fi
 
 # 1.4. Hyprland itself.
 if exists hyprland;then
-	hyprctl reload
+	hyprctl reload&>/dev/null
 else
 	echo -e "${RED}You don't have ${YELLOW}hyprland${RED} package!${RESET}"
 	read;exit 0
