@@ -25,7 +25,7 @@ exists(){
 kp(){ # Kill process
 	if pgrep $1; then
 		pkill $1
-		echo -e "${GREEN}Killed: $1 ${RESET}"
+		echo -e "${GREEN}Killed: $1${RESET}"
 }
 
 # 1.1. Dependencies.
