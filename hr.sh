@@ -23,12 +23,12 @@ exists(){
 
 kp(){ # Kill process
 	if pgrep $1; then
-		pkill $1
+		pkill $1&>/dev/null
 	fi
 }
 
 run(){
-	nohup $1 &>/dev/null &
+	nohup $1 &>/dev/null
 }
 
 # 1.1. Dependencies.
@@ -48,7 +48,7 @@ fi
 
 if exists mpvpaper;then
 	kp mpvpaper
-	video=$(zenity --file-selection --title="Select mpvpaper video"&>/dev/null)&>/dev/null
+	video=$(zenity --file-selection --title="Select mpvpaper video"&>/dev/null)
 	run mpvpaper -s -o "--loop --mute --no-osd-bar --no-input-default-bindings" ALL $video
 fi
 
